@@ -1,0 +1,58 @@
+ [
+     {
+        "serviceImage": "https://i.ibb.co/C96p0Sz/pexels-mister-mister-3490348.jpg",
+        "serviceName": "Personalized Fitness Training",
+        "serviceDescription": "Customized workout plans tailored to your goals and abilities.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/YBBnXhM/pexels-pixabay-414029.jpg",
+        "serviceProviderName": "John Doe",
+        "servicePrice": "$50 per session"
+      },
+      {
+        "serviceImage": "https://i.ibb.co/2nb4x0L/pexels-mathilde-langevin-13347104.jpg",
+        "serviceName": "Yoga for Flexibility",
+        "serviceDescription": "Improve flexibility, balance, and mental well-being through yoga.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/h7f0kYQ/pexels-cliff-booth-4057531.jpg",
+        "serviceProviderName": "Jane Smith",
+        "servicePrice": "$40 per session"
+      },
+      {
+        "serviceImage": "https://i.ibb.co/xhYVYbb/pexels-said-11686251.jpg",
+        "serviceName": "Basketball Skills Coaching",
+        "serviceDescription": "Improve your basketball skills, from dribbling to shooting techniques.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/LgtLpT1/pexels-arthouse-studio-4330047.jpg",
+        "serviceProviderName": "Sarah Williams",
+        "servicePrice": "$55 per session"
+      },
+      {
+        "serviceImage": "https://i.ibb.co/K2FMMrN/pexels-run-ffwpu-5687505.jpg",
+        "serviceName": "Marathon Training Program",
+        "serviceDescription": "Prepare for your next marathon with a tailored training program.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/LgtLpT1/pexels-arthouse-studio-4330047.jpg",
+        "serviceProviderName": "Chris Davis",
+        "servicePrice": "$70 per session"
+      },
+      {
+        "serviceImage": "https://i.ibb.co/PjhqSr5/pexels-alexander-nadrilyanski-3651674.jpg",
+        "serviceName": "Soccer Skills Development",
+        "serviceDescription": "Enhance your soccer skills, from dribbling to tactical awareness.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/C9FypY6/pexels-kampus-production-8941569.jpg",
+        "serviceProviderName": "David Lee",
+        "servicePrice": "$50 per session"
+      },
+      {
+        "serviceImage": "https://i.ibb.co/0jNYh86/pexels-kindel-media-9030270.jpg",
+        "serviceName": "Swimming Technique Coaching",
+        "serviceDescription": "Improve your swimming strokes and techniques with expert coaching.",
+        "viewDetailButton": "View Details",
+        "serviceProviderImage": "https://i.ibb.co/ZBmtJzK/images.jpg",
+        "serviceProviderName": "Amy Johnson",
+        "servicePrice": "$65 per session"
+      }
+     
+]
+  
