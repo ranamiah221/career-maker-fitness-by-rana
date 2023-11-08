@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import login from '../../assets/undraw_login_re_4vu2.svg'
+import loginImg from '../../assets/undraw_login_re_4vu2.svg';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -25,7 +25,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div>
-        <img src={login} alt="" />
+        <img src={loginImg} alt="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <h1 className="text-3xl font-bold underline text-center mt-6">Login now!</h1>
@@ -48,7 +48,7 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <p>You hava no account please <Link className="text-blue-500 text-xl font-bold" to={'/register'}>Register</Link> </p>
+        <p>You hava no account please !! <Link className="text-blue-500 text-xl font-bold" to={'/register'}>Register</Link> </p>
       </form>
     </div>
   </div>
