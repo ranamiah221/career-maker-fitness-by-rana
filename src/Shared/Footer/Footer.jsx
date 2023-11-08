@@ -5,7 +5,7 @@ const Footer = () => {
             <footer className="footer p-16 bg-neutral text-neutral-content">
   <aside>
    <img className='w-[100px] h-[100px] rounded-full' src={logo} alt="" />
-    <p>Lets start today<br/>Enjoy life your life ..2023</p>
+    <p>Lets start today<br/>Enjoy your life 2023</p>
     <p>Copyright © 2023 - All right reserved</p>
   </aside> 
   <nav>

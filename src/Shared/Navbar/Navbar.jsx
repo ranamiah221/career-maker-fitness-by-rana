@@ -1,9 +1,20 @@
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
 import logo from'../../assets/fitLogo1.png';
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import swal from "sweetalert";
 
 const Navbar = () => {
+  const { user, logOut }=useContext(AuthContext);
+  const handleLogOut=() =>{
+    logOut()
+    .then(swal("WOW", "LOG OUT SUCCESSFUL", "success"))
+    .catch(error=>{
+      console.log(error)
+    })
 
+  }
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -15,12 +26,21 @@ const Navbar = () => {
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/login'}>Login</NavLink>
             <NavLink to={'/services'}>Services</NavLink>
+            
               <li> 
                 <a>Dashboard </a>
                 <ul className="p-2">
                  <li><NavLink>My-services</NavLink></li>
                  <li><NavLink>Add-services</NavLink></li>
-                 <li><NavLink>My-schedules</NavLink></li>
+                
+                </ul>
+              </li>
+              <li> 
+                <a>My Schedules </a>
+                <ul className="p-2">
+                 <li><NavLink>My-Booking</NavLink></li>
+                 <li><NavLink>My-Pending Work</NavLink></li>
+                
                 </ul>
               </li>
             </ul>
@@ -32,23 +52,42 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
           <div className={`selected`}>
           <NavLink className={`btn btn-ghost`} to={'/'}>Home</NavLink>
-          <NavLink className={`btn btn-ghost`} to={'/login'}>Login</NavLink>
+          {
+            user?.email ? <button onClick={handleLogOut} className="btn btn-ghost">Log out</button> : <NavLink className={`btn btn-ghost`} to={'/login'}>Login</NavLink>
+          }
           <NavLink className={`btn btn-ghost`} to={'/services'}>Services</NavLink>
+          
           </div>
-            <li tabIndex={0}>
+           <div className="dropdown dropdown-right dropdown-end">
+           <li tabIndex={0}>
               <details>
                 <summary className={`btn btn-ghost mt-2`}>Dashboard </summary>
                 <ul className="p-2">
                  <li><NavLink>My-services</NavLink></li>
                  <li><NavLink>Add-services</NavLink></li>
-                 <li><NavLink>My-schedules</NavLink></li>
                 </ul>
               </details>
             </li>
+           </div>
+           <div className="dropdown dropdown-right dropdown-end">
+           <li tabIndex={0}>
+              <details>
+                <summary className={`btn btn-ghost mt-2`}>My Schedules</summary>
+                <ul className="p-2">
+                 <li><NavLink to={'/bookings'}>My-Booking</NavLink></li>
+                 <li><NavLink>My-Pending Work</NavLink></li>
+                </ul>
+              </details>
+            </li>
+           </div>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          {
+            user?.email ?  <div>{user.email}
+              <button onClick={handleLogOut} className="btn btn-secondary">Log out</button> 
+              </div> : <NavLink className={`btn btn-ghost`} to={'/login'}>Login</NavLink>
+          }
         </div>
       </div>
     );

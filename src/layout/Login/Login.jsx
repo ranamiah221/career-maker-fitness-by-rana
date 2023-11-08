@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import loginImg from '../../assets/undraw_login_re_4vu2.svg';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import swal from "sweetalert";
 
 const Login = () => {
    const {login}= useContext(AuthContext);
@@ -15,7 +16,7 @@ const Login = () => {
        .then(result=>{
         const user = result.user;
         console.log(user)
-        alert('login successful');
+        swal("well come", "Login successful", "success");
        })
        .catch(error=>{
         console.log(error.message);
