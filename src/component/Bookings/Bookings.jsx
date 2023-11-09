@@ -13,42 +13,34 @@ const Bookings = () => {
         .then(res=>res.json())
         .then(data=>setBookings(data))
     },[url])
-    const handleBookingConfirm= id =>{
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be confirm this!",
-            icon: "",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-            
-             fetch(`http://localhost:5000/bookings/${id}`,{
-                method:'PATCH',
-                headers:{
-                    'content-type':'application/json',
-                }
-             })
-             .then(res => res.json())
-             .then(data=>{
-                if(data.modifiedCount>0){
-                    Swal.fire({
-                             title: "pending",
-                             text: "Your file has been pending",
-                             icon: "success"
-                           });
-
-                     const remaining = bookings.filter(booking=> booking._id !== id);
-                     setBookings(remaining);      
-                }
-             })
+    const handleBookingConfirm=id=>{
+        fetch(`http://localhost:5000/bookings/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({status:'confirm'})
+        })
+        .then(res => res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.modifiedCount>0){
+                Swal.fire({
+                    icon: "success",
+                    title: "Thank You ",
+                    text: "Booking confirm",
+                   
+                  });
+                  const remaining = bookings.filter(booking=> booking._id !== id);
+                  const updated = bookings.find(booking=>booking._id===id)
+                  updated.status= 'confirm'
+                  const newBooking =[updated, ...remaining]
+                  setBookings(newBooking);
             }
-          });
+        })
     }
 
-    const handleDelete = id =>{
+      const handleDelete = id =>{
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
