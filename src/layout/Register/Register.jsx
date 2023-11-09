@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import signUp from '../../assets/undraw_sign_up_n6im.svg'
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import swal from "sweetalert";
 
 const Register = () => {
 const { createUser }= useContext(AuthContext);
+  const navigate= useNavigate();
     const handleRegister = e =>{
         e.preventDefault();
         const form = e.target;
@@ -16,10 +18,13 @@ const { createUser }= useContext(AuthContext);
         createUser(email, password)
         .then(result=>{
           const user = result.user;
+          swal("well come", "Login successful", "success");
           console.log(user);
+          navigate('/login')
         })
         .catch(error=>{
           console.log(error.message);
+          swal("oops", 'already registered', "error");
         })
 
      }

@@ -30,8 +30,8 @@ const Navbar = () => {
               <li> 
                 <a>Dashboard </a>
                 <ul className="p-2">
-                 <li><NavLink>My-services</NavLink></li>
-                 <li><NavLink>Add-services</NavLink></li>
+                 <li><NavLink to={'/myService'}>My-services</NavLink></li>
+                 <li><NavLink to={'/addService'}>Add-services</NavLink></li>
                 
                 </ul>
               </li>
@@ -63,8 +63,8 @@ const Navbar = () => {
               <details>
                 <summary className={`btn btn-ghost mt-2`}>Dashboard </summary>
                 <ul className="p-2">
-                 <li><NavLink>My-services</NavLink></li>
-                 <li><NavLink>Add-services</NavLink></li>
+                 <li><NavLink to={'/myService'}>My-services</NavLink></li>
+                 <li><NavLink to={'/addService'}>Add-services</NavLink></li>
                 </ul>
               </details>
             </li>
