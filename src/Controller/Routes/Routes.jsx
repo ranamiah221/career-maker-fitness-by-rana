@@ -7,6 +7,7 @@ import Register from "../../layout/Register/Register";
 import ServicesDetails from "../../component/ServicesDetails/ServicesDetails";
 import Book from "../../component/Book/Book";
 import Bookings from "../../component/Bookings/Bookings";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/bookings',
-          element:<Bookings></Bookings>
+          element:<PrivateRoute><Bookings></Bookings></PrivateRoute>
         }
 
       ]
